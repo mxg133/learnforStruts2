@@ -12,6 +12,8 @@
   </head>
   <body>
   index.jsp<br/>
-  <a href="product-input.action">Product Input</a>
+  <a href="product-input.action">Product Input</a><br/>
+
+  <a href="test.action">Test</a><br/>
   </body>
 </html>

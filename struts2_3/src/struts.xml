@@ -37,10 +37,8 @@
 			<result name="details">/WEB-INF/pages/details.jsp</result>
 		</action>
 
-
 		<action name="test" class="struts2.Product" method="test">
 			<result>/index.jsp</result>
 		</action>
-
 	</package>
 </struts>

@@ -11,10 +11,6 @@ public class Product {
     private String productDesc;
     private double productPrice;
 
-    public Product() {
-        System.out.println("空 构造器·····");
-    }
-
     public Integer getProductId() {
         return productId;
     }
