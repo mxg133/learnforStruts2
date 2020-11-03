@@ -1,4 +1,4 @@
-package struts2.helloword;
+package struts2;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

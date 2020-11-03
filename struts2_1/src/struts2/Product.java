@@ -1,4 +1,4 @@
-package struts2.helloword;
+package struts2;
 
 /**
  * @author 孟享广
