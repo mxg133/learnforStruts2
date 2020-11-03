@@ -9,6 +9,14 @@ import java.io.IOException;
  * @date 2020-11-03 11:01 上午
  * @description
  *  Servlet Filter implementation class FilterDispatcher
+ * 使用 Filter 作为控制器的好处
+ *      使用一个过滤器来作为控制器,
+ *      可以方便地在应用程序里对所有资源(包括静态资源)进行控制访问.
+ *
+ * Servlet 能做的 Filter 是否都可以完成 ? 嗯。
+ * Filter 能做的 Servlet 都可以完成吗 ?
+ *      拦截资源却不是 Servlet 所擅长的!
+ *      Filter 中有一个 FilterChain，这个 API 在 Servlet 中没有！
  */
 public class FilterDispatcher implements Filter {
     public void destroy() {
