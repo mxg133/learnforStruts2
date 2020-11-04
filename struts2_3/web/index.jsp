@@ -16,7 +16,14 @@
   <a href="TestAware.do?name=mxg">TestAware</a><br/>
   <a href="Login-ui.do">Login-ui</a><br/>
 
-  <a href="testActionSupport.do">testActionSupport</a>
+  <a href="testActionSupport.do">testActionSupport</a><br/>
+
+  <a href="testResult.do?number=5">test Result</a><br/>
+
+  <a href="actionName.do?number=6">actionName</a><br/>
+
+  <a href="testDynamicMethodInvocation.do">testDynamicMethodInvocation</a><br/>
+
 
   <%
     if (application.getAttribute("date") == null) {

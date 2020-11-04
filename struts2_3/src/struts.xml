@@ -11,10 +11,10 @@
 	<constant name="struts.action.extension" value="action,do,"></constant>
 
 	<!-- 打开允许动态方法调用的开关, 默认是 false -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 
 
-
-	<package name="default"  extends="struts-default">
+	<package name="default" extends="struts-default" namespace="/mxg">
 		<action name="TestActionContext" class="struts2.action.TestActionContextAction" method="execute">
 			<result name="success">/test-actionContext.jsp</result>
 		</action>
@@ -37,6 +37,35 @@
 
 		<action name="testActionSupport">
 			<result>/testActionSupport.jsp</result>
+		</action>
+
+		<action name="testResult" class="struts2.action.TestResultAction" method="execute">
+			<result name="success" type="dispatcher">/success.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+			<!--重定向-->
+<!--			<result name="index" type="redirectAction">-->
+<!--				<param name="actionName">testAction</param>-->
+<!--				<param name="namespace">/mxg</param>-->
+<!--			</result>-->
+			<result name="index" type="redirect">/mxg/testAction.do</result>
+			<result name="test" type="chain">
+				<param name="actionName">testAction</param>
+				<param name="namespace">/mxg</param>
+			</result>
+
+<!--			<result name="test">/mxg/testAction.do</result>-->
+		</action>
+
+
+<!--		动态方式调用-->
+		<action name="testDynamicMethodInvocation" class="struts2.action.TestDynamicMethodInvocationActoin" method="save">
+			<result>/success.jsp</result>
+		</action>
+	</package>
+
+	<package name="testPackage" namespace="/mxg" extends="struts-default">
+		<action name="testAction" class="struts2.action.TestAction">
+			<result>/success.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -44,7 +44,7 @@ public class TestActionContextAction {
         Map<String, Object> parametersMap = actionContext.getParameters();
         String name[] = (String[])parametersMap.get("name");
         System.out.println(name[0]);
-//        parametersMap.put("parameterskey", "parametersValue");
+//        parametersMap.put("parametersKey", "parametersValue");
         return "success";
     }
 }
