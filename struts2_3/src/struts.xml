@@ -4,41 +4,39 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<!--
-		package: 包. struts2 使用 package 来组织模块.
-		name 属性: 必须. 用于其它的包应用当前包.
-		extends: 当前包继承哪个包, 继承的, 即可以继承其中的所有的配置. 通常情况下继承 struts-default
-		         struts-default 这个包在 struts-default.xml 文件中定义.
-		namespace 可选, 如果它没有给出, 则以 / 为默认值.
-		           若 namespace 有一个非默认值, 则要想调用这个包里的Action,
-		           就必须把这个属性所定义的命名空间添加到有关的 URI 字符串里
+	<!-- 配置 Struts 可以受理的请求的扩展名 -->
+	<!-- 1). org.apache.struts2 包下的 default.properties 中配置了 Struts2 应用个的一些常量-->
+	<!-- 2). struts.action.extension 定义了当前 Struts2 应用可以接受的请求的扩展名.-->
+	<!-- 3). 可以在 struts.xml 文件中以常量配置的方式修改 default.properties 所配置的常量.-->
+	<constant name="struts.action.extension" value="action,do,"></constant>
 
-		          http://localhost:8080/contextPath/namespace/actionName.action
-	-->
-	<package name="helloword" extends="struts-default">
-		<!--
-            配置一个 action: 一个 struts2 的请求就是一个 action
-            name: 对应一个 struts2 的请求的名字(或对一个 servletPath, 但去除 / 和扩展名), 不包含扩展名
-            class 的默认值为: com.opensymphony.xwork2.ActionSupport
-            method 的默认值为: execute
-            result: 结果.
-        -->
-		<action name="product-input" class="com.opensymphony.xwork2.ActionSupport" method="execute">
-			<!--
-     			result: 结果. 表示 action 方法执行后可能返回的一个结果. 所以一个 action 节点可能会有多个 result 子节点.
-     			多个 result 子节点使用 name 来区分
-     			name: 标识一个 result. 和 action 方法的返回值对应. 默认值为 success
-     			type: 表示结果的类型. 默认值为 dispatcher(转发到结果.)
- 			-->
-			<result name="success" type="dispatcher">/WEB-INF/pages/input.jsp</result>
+	<!-- 打开允许动态方法调用的开关, 默认是 false -->
+
+
+
+	<package name="default"  extends="struts-default">
+		<action name="TestActionContext" class="struts2.action.TestActionContextAction" method="execute">
+			<result name="success">/test-actionContext.jsp</result>
 		</action>
 
-		<action name="product-save" class="struts2.Product" method="save">
-			<result name="details">/WEB-INF/pages/details.jsp</result>
+		<action name="TestAware" class="struts2.action.TestAwareAction">
+			<result>/test-aware.jsp</result>
 		</action>
 
-		<action name="test" class="struts2.Product" method="test">
-			<result>/index.jsp</result>
+		<action name="Login-ui">
+			<result>/login.jsp</result>
+		</action>
+
+		<action name="user-login" class="struts2.action.UserAction" method="execute">
+			<result name="login-success">/login-success.jsp</result>
+		</action>
+
+		<action name="Logout" class="struts2.action.UserAction" method="logout">
+			<result name="logout-success">/login.jsp</result>
+		</action>
+
+		<action name="testActionSupport">
+			<result>/testActionSupport.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: mxg
   Date: 2020/11/3
@@ -8,14 +8,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>index</title>
   </head>
   <body>
   index.jsp<br/>
-  <a href="product-input.action">Product Input</a><br/>
+  <a href="TestActionContext?name=mxg">TestActionContext</a><br/>
+  <a href="TestAware.do?name=mxg">TestAware</a><br/>
+  <a href="Login-ui.do">Login-ui</a><br/>
 
-  <a href="test.action">Test</a><br/>
+  <a href="testActionSupport.do">testActionSupport</a>
 
+  <%
+    if (application.getAttribute("date") == null) {
+      application.setAttribute("date", new Date());
+    }
+  %>
 
   </body>
 </html>
