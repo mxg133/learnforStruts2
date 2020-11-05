@@ -11,10 +11,12 @@
 	<constant name="struts.action.extension" value="action,do,"></constant>
 
 	<!-- 打开允许动态方法调用的开关, 默认是 false -->
+
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<!-- 打开静态方法的调用 的限制 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
 
-
-	<package name="default" extends="struts-default" namespace="/mxg">
+	<package name="default" extends="struts-default">
 		<action name="TestActionContext" class="struts2.action.TestActionContextAction" method="execute">
 			<result name="success">/test-actionContext.jsp</result>
 		</action>
@@ -61,6 +63,26 @@
 		<action name="testDynamicMethodInvocation" class="struts2.action.TestDynamicMethodInvocationActoin" method="save">
 			<result>/success.jsp</result>
 		</action>
+
+
+		<action name="product-save" class="struts2.valuestack.Product" method="save">
+			<result>/details.jsp</result>
+		</action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</package>
 
 	<package name="testPackage" namespace="/mxg" extends="struts-default">

@@ -12,6 +12,8 @@
   </head>
   <body>
   index.jsp<br/>
+
+  <a href="product-input.action">Product Input</a><br/>
   <a href="TestActionContext?name=mxg">TestActionContext</a><br/>
   <a href="TestAware.do?name=mxg">TestAware</a><br/>
   <a href="Login-ui.do">Login-ui</a><br/>
