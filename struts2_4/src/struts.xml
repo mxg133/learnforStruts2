@@ -5,5 +5,12 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <!-- 打开允许动态方法调用的开关, 默认是 false -->
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <!-- 打开静态方法的调用 的限制 -->
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+
+
 
 </struts>

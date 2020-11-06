@@ -32,6 +32,18 @@
       application.setAttribute("date", new Date());
     }
   %>
+  <br/><br/>
+  <a href="testTag.action?name=mxg133">testTag</a>
 
+  <%
+    session.setAttribute("date", new Date());
+  %>
+
+  <form action="testTag.action">
+    <input type="text" name="username"/>
+    <input type="submit" value="Sub!">
+  </form>
+
+  <a href="save.action?name=mxg133">testForm</a>
   </body>
 </html>

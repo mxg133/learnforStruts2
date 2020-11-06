@@ -65,20 +65,27 @@
 		</action>
 
 
+<!--		全局异常处理-->
+<!--		<global-results>-->
+<!--			<result name="input">/input.jsp</result>-->
+<!--		</global-results>-->
+<!--		<global-exception-mappings>-->
+<!--			<exception-mapping exception="java.lang.ArithmeticException" result="input"/>-->
+<!--		</global-exception-mappings>-->
+
+
 		<action name="product-save" class="struts2.valuestack.Product" method="save">
 			<result>/details.jsp</result>
 		</action>
 
 
+		<action name="testTag" class="struts2.valuestack.Product" method="testTag">
+			<result name="success">/common-tag.jsp</result>
+		</action>
 
-
-
-
-
-
-
-
-
+		<action name="save" class="struts2.valuestack.UserAction" method="save">
+			<result name="input">/form-tag.jsp</result>
+		</action>
 
 
 

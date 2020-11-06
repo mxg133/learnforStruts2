@@ -5,6 +5,8 @@ import com.opensymphony.xwork2.util.ValueStack;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -75,6 +77,28 @@ public class Product implements RequestAware, SessionAware {
         //
         sessionMap.put("product", this);
         requestMap.put("test", test);
+
+        int i = 12 / 0;
+
+        return "success";
+    }
+
+    private List<Person> persons = new ArrayList<>();
+
+    public List<Person> getPersons() {
+        return persons;
+    }
+
+    public String testTag() {
+        persons.add(new Person(("003"), 333));
+        persons.add(new Person(("001"), 111));
+        persons.add(new Person(("005"), 555));
+        persons.add(new Person(("002"), 222));
+        persons.add(new Person(("004"), 444));
+        this.productId = 1001;
+        this.productName = "testTag Name";
+        this.productDesc = "testTag Desc";
+        this.productPrice = 1001;
         return "success";
     }
 
